@@ -6,7 +6,7 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
 
-HOST = "localhost"
+HOST = "0.0.0.0"
 PORT = 3000
 
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates")
@@ -91,5 +91,5 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = HTTPServer((HOST, PORT), RequestHandler)
-    print(f"Server running on http://{HOST}:{PORT}")
+    print(f"Server running on http://localhost:{PORT}")
     server.serve_forever()
