@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Messages</h1>
+    <h1>All Messages</h1>
     <ul>
-        {{ messages }}
+        {% for timestamp, msg in messages.items() %}
+            <li><strong>{{ msg.username }}</strong>: {{ msg.message }} ({{ timestamp }})</li>
+        {% endfor %}
     </ul>
     <a href="/">Back to Home</a>
 </body>
